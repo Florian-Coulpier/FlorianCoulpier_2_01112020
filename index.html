@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/style.css">
+  <script src="https://kit.fontawesome.com/406da18a0b.js" crossorigin="anonymous" defer ></script>
   <title>Reservia</title>
 </head>
 
@@ -13,17 +14,56 @@
   <header class="header">
     <img id="logo" src="./images/logo/Reservia.svg" alt="Reservia">
     <nav>
-      <a href="">Hébergements</a>
-      <a href="">Activités</a>
+      <a class="navLink" href="#hosting">Hébergements</a>
+      <a class="navLink" href="#activity">Activités</a>
+      <a class="sign" href="#">S'inscrire</a>
     </nav>
-    <a href="">S'inscrire</a>
+    
   </header>
   <!-- HEADER -->
 
   <!-- MAIN -->
-  <section>
+  <main>
+    <!-- SEARCH -->
+    <section class="search">
+      <h1 class="searchTitle">Trouvez votre hébergement pour des vacances de rêve</h1>
+      <p class="searchText">En plein centre ville ou en pleine nature</p>
+      <form>
+        <span class="searchFormIcon">
+          <i class="fas fa-map-marker-alt"></i>
+        </span>
+        <input class="searchFormInput" type="search" placeholder="Marseille, France">
+        <button>Rechercher</button>
+      </form>
+      <!-- FILTERS -->
+      <div class="searchFilters">
+        <h2 class="searchFiltersTitle">Filtres</h2>
+        <div class="searchFiltersOne">
+          <i class="fas fa-money-bill-wave"></i>
+          <span class="searchFiltersOneTitle">Économique</span>
+        </div>
+        <div class="searchFiltersTwo">
+          <i class="fas fa-child"></i>
+          <span class="searchFiltersTwoTitle">Familial</span>
+        </div>
+        <div class="searchFiltersTree">
+          <i class="fas fa-heart"></i>
+          <span class="searchFiltersTreeTitle">Romantique</span>
+        </div>
+        <div class="searchFiltersFour">
+          <i class="fas fa-dog"></i>
+          <span class="searchFiltersFourTitle">Animaux autorisés</span>
+        </div>
+      </div>
+      <div class="searchResult">
+        <i class="fas fa-info"></i>
+        <p class="searchResultText">Plus de 500 logements sont disponibles dans cette ville</p>
+      </div>
+      <!-- FILTRES -->
+    </section>
+    <!-- SEARCH -->
 
-  </section>
+  </main>
   
   <footer>
 
