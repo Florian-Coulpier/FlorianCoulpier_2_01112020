@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservia</title>
   <link rel="stylesheet" href="style/style.css">
   <script src="https://kit.fontawesome.com/406da18a0b.js" crossorigin="anonymous" defer ></script>
-  <title>Reservia</title>
 </head>
 
 <body>
 
   <!-- HEADER -->
   <header class="header">
-    <img id="logo" src="images/logo/Reservia.svg" alt="Reservia">
+    <img src="images/logo/Reservia.svg" alt="Reservia">
     <nav>
-      <a class="navLink" href="#hosting">Hébergements</a>
-      <a class="navLink" href="#activity">Activités</a>
-      <a class="sign" href="#">S'inscrire</a>
+      <a class="navLink" id="navHosting" href="#hosting" data-active="true">Hébergements</a>
+      <a class="navLink" id="navActivity" href="#activity" data-active="false">Activités</a>  
     </nav>
+    <a class="sign" href="#">S'inscrire</a>
   </header>
   <!-- HEADER -->
 
@@ -32,7 +32,10 @@
           <i class="fas fa-map-marker-alt"></i>
         </span>
         <input class="searchFormInput" type="search" placeholder="Marseille, France">
-        <button>Rechercher</button>
+        <button>
+          <span>Rechercher</span>
+          <i class="searchFormSubmitinputIcon fas fa-search" aria-hidden="true"></i>
+        </button>
       </form>
       <!-- FILTERS -->
       <div class="searchFilters">
@@ -189,10 +192,10 @@
             </div>
           </a>
         </article>
-        <article class="hostingPopularCard">
+        <article class="hostingPopularCard" id="hostingPopularCardHotes">
           <a href="#">
             <figure>
-              <img src="images/hebergements/3_medium/aw-creative-VGs8z60yT2c-unsplash.jpg" alt="Un lit avec sa tête de lit dans la chambre d'Hôte">
+              <img src="images/hebergements/4_small/aw-creative-VGs8z60yT2c-unsplash.jpg" alt="Un lit avec sa tête de lit dans la chambre d'Hôte">
             </figure>
             <div class="hostingMainCardDescription">
               <h3>Au coeur de l'eau Chambres d'hôtes</h3>
@@ -273,7 +276,7 @@
     <!-- ACTIVITY -->
   </main>
   <!-- MAIN -->
-  
+
   <!-- FOOTER -->
   <footer>
     <div class="Column">
@@ -296,6 +299,7 @@
     </div>
   </footer>
   <!-- FOOTER -->
+  
 
 </body>
 

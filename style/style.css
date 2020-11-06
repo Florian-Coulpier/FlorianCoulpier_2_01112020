@@ -2,46 +2,92 @@
 
 body {
   font-family: Raleway, "Sans serif";
-  align-items: center;
-  margin: 0px;
+  margin: 0;
 }
 
 
 /* HEADER */
 
 header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
   max-width: 1440px;
-  padding-top: 30px;
-  padding-right: 40px;
-  padding-left: 40px;
   margin: auto;
+  align-items: center;
 }
 
-header nav {
-  margin-top: 5px;
+@media screen and (min-width: 601px){
+  header {
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-areas: "logo . navbar button";
+    }
+  header nav .navLink[data-active=true] {
+    border-top: 3px solid #0065FC;
+    }
+  header nav {
+    grid-area: navbar;
+    display: flex;
+    }
+  header nav .navLink[data-active=true] {
+    color: #0065FC; 
+    }
+}
+
+@media screen and (max-width: 600px){
+  header {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+        "logo . button"
+        "navbar navbar navbar"; 
+    }
+  header nav .navLink {
+    border-top: none;
+    border-bottom: 3px solid #F2F2F2;
+    width: 50%;
+  }
+  header nav .navLink[data-active=true] {
+    border-bottom-color: #0065FC;
+    }
+  header nav {
+    order: 2;
+    display: flex;
+    grid-area: navbar;
+  }
+  header .sign {
+    order: 1;
+  }
+}
+
+header img{
+  grid-area: logo;
+  padding: 0 30px;
 }
 
 header nav .navLink {
-  font-weight: 400;
   color: rgb(2, 2, 2);
+  padding: 30px;
+  font-weight: 500;
+  text-align: center;
+  border-top: 3px transparent solid;
+  border-bottom: 3px transparent solid;
 }
 
 header nav a {
-  padding: 33px 35px 30px;
   text-decoration: none;
-  font-weight: 400;
 }
 
 header nav a:hover {
-  border-top: 2px solid rgb(0, 101, 252);
+  border-top: 3px solid rgb(0, 101, 252);
   color: rgb(0, 101, 252);
 }
 
-header nav .sign {
+header .sign {
   font-weight: 700;
   color: rgb(0, 101, 252);
+  grid-area: button;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  text-decoration: none;
 }
 
 
@@ -49,21 +95,28 @@ header nav .sign {
 
 main {
   max-width: 1440px;
-  padding-right: 40px;
-  padding-left: 40px;
   margin: auto;
 }
 
 
 /* SEARCH */
 
+
 main .search h1 {
-  margin: 40px 0px -5px;
+  padding-left: 30px;
+  font-size: 30px;
+  margin-bottom: 0px;
+}
+
+main .search .searchText {
+  padding-left: 30px;
+  margin: 10px 0px;
 }
 
 main .search form {
   margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  padding-left: 30px;
 }
 
 main .search form span i {
@@ -85,6 +138,18 @@ main .search form input {
   border-color: rgb(242, 242, 242);
   border-image: initial;
   padding: 12px;
+}
+
+@media screen and (min-width: 600px){
+  main .search form button i {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px){
+  main .search form button span {
+    display: none;
+  }
 }
 
 main .search form button {
@@ -112,10 +177,12 @@ main .search .searchFilters {
 main .search .searchFilters h2 {
   font-size: 25px;
   padding-top: 10px;
+  padding-left: 30px;
+  padding-right: 20px;
   margin: 0px;
 }
 
-main .search .searchFilters div {
+main .search .searchFiltersWrap {
   margin-left: 30px;
   border-width: 2px;
   border-style: solid;
@@ -139,7 +206,7 @@ main .search .searchFilters div i {
 
 main .search .searchFilters div span {
   font-weight: 600;
-  padding: 0px 15px 0px 5px;
+  padding: 0px 15px 0px 8px;
 }
 
 main .search .searchFilters .fa-money-bill-wave {
@@ -160,7 +227,7 @@ main .search .searchFilters .fa-dog {
 
 main .search .searchResult {
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 main .search .searchResult i {
@@ -171,6 +238,7 @@ main .search .searchResult i {
   border-color: rgb(231, 231, 231);
   border-image: initial;
   border-radius: 50%;
+  margin-left: 30px;
 }
 
 main .search .searchResult p {
@@ -181,9 +249,13 @@ main .search .searchResult p {
 /* HOSTING */
 
 main .hosting {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 6fr 3fr;
+  grid-column-gap: 40px;
+  padding-left: 30px;
 }
+
+
 
 main .hosting .hostingMain {
   background-color: rgb(242, 242, 242);
@@ -203,7 +275,7 @@ main .hosting .hostingMain .hostingMainCardOne {
 
 main .hosting .hostingMain .hostingMainCard {
   background-color: white;
-  width: 270px;
+  width: 250px;
   height: 200px;
   border-width: 5px;
   border-style: solid;
@@ -211,6 +283,10 @@ main .hosting .hostingMain .hostingMainCard {
   border-image: initial;
   margin: 10px;
   border-radius: 20px;
+}
+
+main .hosting .hostingMain .hostingMainCard:hover {
+  transform : scale(1.01);
 }
 
 main .hosting .hostingMain .hostingMainCardOne a {
@@ -221,7 +297,7 @@ main .hosting .hostingMain .hostingMainCardOne a {
 
 main .hosting .hostingMain .hostingMainCard figure {
   height: 110px;
-  width: 270px;
+  width: 250px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   position: relative;
@@ -297,7 +373,7 @@ main .hosting .hostingPopular .hostingPopularTitle {
 
 main .hosting .hostingPopular .hostingPopularCard {
   background-color: white;
-  width: 400px;
+  width: 380px;
   height: 140px;
   border-width: 5px;
   border-style: solid;
@@ -305,6 +381,18 @@ main .hosting .hostingPopular .hostingPopularCard {
   border-image: initial;
   margin: 30px;
   border-radius: 20px;
+}
+
+main .hosting .hostingPopular #hostingPopularCardHotes img {
+  width: 130px;
+}
+
+main .hosting .hostingPopular #hostingPopularCardHotes .hostingMainCardDescription {
+  padding-left: 30px;
+}
+
+main .hosting .hostingPopular .hostingPopularCard:hover {
+  transform: scale(1.01);
 }
 
 main .hosting .hostingPopular a {
@@ -364,6 +452,7 @@ main .hosting .hostingPopular .hostingPopularCard .hostingMainCardDescription .h
   display: grid;
   column-gap: 40px;
   margin-bottom: 50px;
+  padding-left: 30px;
 }
 
 .activity .activityCard {
@@ -372,6 +461,10 @@ main .hosting .hostingPopular .hostingPopularCard .hostingMainCardDescription .h
   flex-direction: column;
   border-radius: 20px;
   overflow: hidden;
+}
+
+.activity .activityCard:hover {
+  transform: scale(1.01);
 }
 
 .activity a {
@@ -395,14 +488,14 @@ main .hosting .hostingPopular .hostingPopularCard .hostingMainCardDescription .h
   color: black;
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 768px) {
   .activity {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto 14rem 2rem 2rem 2rem 14rem;
+    grid-template-rows: auto 220px 32px 32px 32px 220px;
   }
   .activityCard1 {
-    grid-row: 2/7;
     grid-column: 1/2;
+    grid-row: 2/7;
   }
   .activityCard2 {
     grid-column: 2/3;
@@ -431,24 +524,25 @@ main .hosting .hostingPopular .hostingPopularCard .hostingMainCardDescription .h
 
 footer {
   background-color: rgb(242, 242, 242);
-  padding: 20px 50px;
+  width: auto;
 }
 
 footer .Column {
   display: flex;
   flex-direction: row;
   width: 1440px;
+  max-width: 100%;
   margin: auto;
 }
 
 footer .footerColumn {
-  display: flex;
-  flex-direction: column;
-  margin-right: 250px;
+ width: 30%;
+ padding: 40px 40px;
 }
 
 footer .footerColumn a {
   color: black;
   margin-bottom: 18px;
   text-decoration: none;
+  display: block;
 }
