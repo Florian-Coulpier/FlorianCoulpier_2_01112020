@@ -279,7 +279,7 @@ main .search .searchResult p {
 main .hosting {
   display: grid;
   grid-template-columns: 6fr 3fr;
-  grid-column-gap: 40px;
+  grid-column-gap: 30px;
   padding-left: 30px;
   padding-right: 30px;
 }
@@ -484,6 +484,7 @@ main .hosting .hostingPopular {
     display: flex;
     padding: 0px 15px;
   }
+
 }
 
 @media screen and (max-width: 1200px){
@@ -530,10 +531,6 @@ main .hosting .hostingPopular .hostingPopularCard {
   border-radius: 20px;
 }
 
-main .hosting .hostingPopular #hostingPopularCardHotes {
-  
-}
-
 main .hosting .hostingPopular .hostingPopularCard:hover {
   transform: scale(1.01);
 }
@@ -562,12 +559,14 @@ main .hosting .hostingPopular .hostingPopularCard img {
 main .hosting .hostingPopular .hostingPopularCard .hostingMainCardDescription {
   margin-left: 20px;
   position: relative;
+  width: -webkit-fill-available;
 }
 
 main .hosting .hostingPopular .hostingPopularCard .hostingMainCardDescription h3 {
   color: black;
   margin-top: 6px;
   margin-bottom: 5px;
+  flex-wrap: wrap;
 }
 
 main .hosting .hostingPopular .hostingPopularCard .hostingMainCardDescription p {
