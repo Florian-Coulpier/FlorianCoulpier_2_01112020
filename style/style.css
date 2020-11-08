@@ -219,7 +219,7 @@ main .search .searchFiltersWrap {
   margin-bottom: 15px;
 }
 
-main .search .searchFilters div:hover {
+main .search .searchFiltersWrap:hover {
   color: rgb(0, 101, 252);
   background-color: rgb(222, 235, 255);
   border-color: rgb(222, 235, 255);
@@ -284,7 +284,38 @@ main .hosting {
   padding-right: 30px;
 }
 
-@media screen and (max-width: 1430px){
+@media screen and (min-width: 1001px){
+  main .hosting .hostingMain .allHostingMainCard {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  main .hosting .hostingMain .allHostingMainCard .one{
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  main .hosting .hostingMain .allHostingMainCard .two{
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  main .hosting .hostingMain .allHostingMainCard .tree{
+    grid-column: 3/4;
+    grid-row: 1/2;
+  }
+  main .hosting .hostingMain .allHostingMainCard .four{
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  main .hosting .hostingMain .allHostingMainCard .five{
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  main .hosting .hostingMain .allHostingMainCard .six{
+    grid-column: 3/4;
+    grid-row: 2/3;
+  }
+}
+
+@media screen and (max-width: 1360px){
   .hosting {
     grid-template-columns: none !important;
   }
@@ -296,24 +327,40 @@ main .hosting {
   }
 }
 
-@media screen and (max-width: 1000px){
-  .hosting {
-    grid-template-columns: none !important;
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  main .hosting .hostingMain .allHostingMainCard {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
   }
-  .hostingMain{
-    order: 2;
+  main .hosting .hostingMain .allHostingMainCard .one{
+    grid-column: 1/2;
+    grid-row: 1/2;
   }
-  .hostingPopulaire{
-    order: 1;
+  main .hosting .hostingMain .allHostingMainCard .two{
+    grid-column: 2/3;
+    grid-row: 1/2;
   }
-  main .hosting .hostingMain .hostingMainCard {
-    width: auto;
+  main .hosting .hostingMain .allHostingMainCard .tree{
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  main .hosting .hostingMain .allHostingMainCard .four{
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  main .hosting .hostingMain .allHostingMainCard .five{
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+  main .hosting .hostingMain .allHostingMainCard .six{
+    grid-column: 2/3;
+    grid-row: 3/4;
   }
 }
 
 @media screen and (max-width: 600px){
   main .hosting {
-    padding: 0px;
+    padding: 0px !important;
   }
   main .hosting .hostingMain{
     background-color: white !important;
@@ -324,37 +371,45 @@ main .hosting {
   main .hosting .hostingMain .hostingMainCardTwo{
     display: block !important;
   }
+  main .hosting .hostingMain h2 {
+    margin: 30px 0px 15px 30px !important;
+  }
   main .hosting .hostingMain .hostingMainCard{
+    margin: 0px 0px 0px 0px !important;
+    box-shadow: rgb(231, 231, 231) 4px 4px 10px;
     width: auto !important;
+  }
+  main .hosting .hostingMain .hostingMainViewmore{
+    margin-left: 30px !important;
   }
 }
 
 main .hosting .hostingMain {
   background-color: rgb(242, 242, 242);
-  margin-bottom: 30px;
-  padding: 0px 20px 40px 0px;
   border-radius: 15px;
 }
 
 main .hosting .hostingMain h2 {
   padding: 0;
-  margin: 35px 0px 5px 35px;
+  margin: 30px 0px 20px 30px;
 }
 
-main .hosting .hostingMain .hostingMainCardOne {
-  display: flex;
-  margin-left: 20px;
+main .hosting .hostingMain .allHostingMainCard {
+  display: grid;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  padding: 0px 30px 30px 30px;
+
 }
 
 main .hosting .hostingMain .hostingMainCard {
   background-color: white;
-  width: 33.3%;
+  width: auto;
   height: 200px;
   border-width: 5px;
   border-style: solid;
   border-color: white;
   border-image: initial;
-  margin: 15px;
   border-radius: 20px;
 }
 
@@ -362,7 +417,7 @@ main .hosting .hostingMain .hostingMainCard:hover {
   transform : scale(1.01);
 }
 
-main .hosting .hostingMain .hostingMainCardOne a {
+main .hosting .hostingMain .allHostingMainCard a {
   font-weight: 500;
   color: black;
   text-decoration: none;
@@ -404,24 +459,11 @@ main .hosting .hostingMain .hostingMainCardStarBad {
   color: rgb(224, 223, 223);
 }
 
-main .hosting .hostingMain .hostingMainCardTwo {
-  display: flex;
-  margin-left: 20px;
-  margin-bottom: 30px;
-}
-
-main .hosting .hostingMain .hostingMainCardTwo a {
-  font-weight: 500;
-  color: black;
-  text-decoration: none;
-}
-
 main .hosting .hostingMain .hostingMainViewmore {
   color: black;
   font-weight: 600;
   font-size: 20px;
-  margin-left: 30px;
-  margin-top: 60px;
+  margin: 0px 0px 0px 30px;
   text-decoration: none;
 }
 
@@ -430,16 +472,17 @@ main .hosting .hostingMain .hostingMainViewmore {
 
 main .hosting .hostingPopular {
   background-color: rgb(242, 242, 242);
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   border-radius: 15px;
 }
 
-@media screen and (max-width: 1430px){
+@media screen and (max-width: 1360px){
   main .hosting .hostingPopular .hostingPopularCard {
     width: auto !important;
   }
   main .hosting .hostingPopular .allPopularCard {
     display: flex;
+    padding: 0px 15px;
   }
 }
 
@@ -457,15 +500,16 @@ main .hosting .hostingPopular {
     border-radius: 0px;
   }
   main .hosting .hostingPopular h2{
-    margin: 35px 0px 5px 20px !important;
-    padding-right: 20px !important;
+    margin: 35px 0px 20px 30px !important;
+    padding-right: 30px !important;
   }
-
+  main .hosting .hostingPopular .allPopularCard {
+    padding: 0px 0px;
+  }
 }
 
 main .hosting .hostingPopular h2 {
-  padding: 0;
-  margin: 35px 0px 5px 35px;
+  margin: 30px 0px 20px 30px;
 }
 
 main .hosting .hostingPopular .hostingPopularTitle {
@@ -482,12 +526,12 @@ main .hosting .hostingPopular .hostingPopularCard {
   border-style: solid;
   border-color: white;
   border-image: initial;
-  margin: 20px;
+  margin: 15px 30px 30px 30px;
   border-radius: 20px;
 }
 
-main .hosting .hostingPopular #hostingPopularCardHotes .hostingMainCardDescription {
-  padding-left: 35px;
+main .hosting .hostingPopular #hostingPopularCardHotes {
+  
 }
 
 main .hosting .hostingPopular .hostingPopularCard:hover {
@@ -555,8 +599,9 @@ main .hosting .hostingPopular .hostingPopularCard .hostingMainCardDescription .h
   padding-right: 30px;
 }
 
-.activity h2 {
-    grid-column: 1/-1;
+#activity h2{
+  padding-left: 30px;
+  margin-top: 50px;
 }
 
 .activity .activityCard {
@@ -658,8 +703,10 @@ main .hosting .hostingPopular .hostingPopularCard .hostingMainCardDescription .h
 @media only screen and (max-width: 601px) {
   .activity {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 300px) ;
-    row-gap: 30px;
+    grid-template-rows: repeat(6, 180px) ;
+    row-gap: 20px;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
   }
   .activityCard1 {
     grid-column: 1/2;
@@ -671,19 +718,22 @@ main .hosting .hostingPopular .hostingPopularCard .hostingMainCardDescription .h
   }
   .activityCard3 {
     grid-column: 1/2;
-    grid-row: 3/4;
+    grid-row: 4/5;
   }
   .activityCard4 {
     grid-column: 1/2;
-    grid-row: 4/5;
+    grid-row: 5/6;
   }
   .activityCard5 {
     grid-column: 1/2;
-    grid-row: 5/6;
+    grid-row: 3/4;
   }
   .activityCard6 {
     grid-column: 1/2;
     grid-row: 6/7;
+  }
+  #activity h2{
+    padding-left: 30px !important;
   }
 }
 
@@ -699,6 +749,9 @@ footer {
   footer .Column {
     flex-wrap: wrap;
   }
+  footer .footerColumn{
+    width: 100% !important;
+  }
 }
 
 footer .Column {
@@ -711,12 +764,12 @@ footer .Column {
 
 footer .footerColumn {
  width: 30%;
- padding: 40px 40px;
+ padding: 10px 40px;
 }
 
 footer .footerColumn a {
   color: black;
-  margin-bottom: 18px;
+  margin-bottom: 15px;
   text-decoration: none;
   display: block;
 }
