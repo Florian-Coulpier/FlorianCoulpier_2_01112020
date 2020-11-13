@@ -321,6 +321,7 @@ main .hosting {
   }
   .hostingMain{
     order: 2;
+    margin-top: 30px;
   }
   .hostingPopulaire{
     order: 1;
@@ -364,6 +365,7 @@ main .hosting {
   }
   main .hosting .hostingMain{
     background-color: white !important;
+    margin-top: 0px;
   }
   main .hosting .hostingMain .hostingMainCardOne{
     display: block !important;
@@ -387,6 +389,7 @@ main .hosting {
 main .hosting .hostingMain {
   background-color: rgb(242, 242, 242);
   border-radius: 15px;
+  padding-bottom: 30px;
 }
 
 main .hosting .hostingMain h2 {
