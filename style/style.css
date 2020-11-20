@@ -563,6 +563,7 @@ main .hosting .hostingPopular .hostingPopularCard .hostingMainCardDescription {
   margin-left: 20px;
   position: relative;
   width: -webkit-fill-available;
+  width: -moz-available;
 }
 
 main .hosting .hostingPopular .hostingPopularCard .hostingMainCardDescription h3 {
